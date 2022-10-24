@@ -6,3 +6,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Open Sans', sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+* {
+  box-sizing: border-box; // it will apply padding inside the box & It will not change the actual width :p
+}
