@@ -5,7 +5,7 @@ import {
 } from '../../firebase.config'
 import FormInput from '../../components/form-input/FormInput'
 import Button from '../../components/button/Button'
-import './SignUp.scss'
+import './signUp.scss'
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
