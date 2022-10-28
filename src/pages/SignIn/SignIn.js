@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from '../../firebase.config'
 import FormInput from '../../components/form-input/FormInput'
@@ -9,16 +8,15 @@ import Button from '../../components/button/Button'
 import './signIn.scss'
 
 const SignIn = () => {
-  const signInWithGoogle = async () => {
-    const res = await signInWithGooglePopup()
-    await createUserDocumentFromAuth(res.user)
-  }
-
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   })
   const { email, password } = formData
+
+  const signInWithGoogle = async () => {
+    await signInWithGooglePopup()
+  }
 
   const onChange = (e) => {
     setFormData((prevState) => ({
@@ -32,6 +30,7 @@ const SignIn = () => {
 
     try {
       await signInAuthUserWithEmailAndPassword(email, password)
+
       setFormData({
         email: '',
         password: '',

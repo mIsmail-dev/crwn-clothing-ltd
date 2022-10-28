@@ -34,8 +34,7 @@ const SignUp = () => {
       const userCredential = await createAuthUserWithEmailAndPassword(
         email,
         password
-      )
-
+      ) // userCredential is a auth Object.
       await createUserDocumentFromAuth(userCredential.user, { displayName }) // sending DisplayName, bcz createUserDocument ftn is expecting a user Display name but the createAuthUserWithEmailAndPassword does not return us displayName. So, we send it by this way. Note: Google Auth return display name in the user :p
 
       setFormData({
