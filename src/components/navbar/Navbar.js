@@ -1,7 +1,7 @@
 import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { ReactComponent as CrwnLogo } from '../../assets/svg/083 crown.svg'
-import { signOutUser } from '../../firebase.config'
+import { signOutUser } from '../../utils/firebase/firebase.utils'
 import UserContext from '../../contexts/UserContext'
 import './navbar.scss'
 

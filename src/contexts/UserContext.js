@@ -2,7 +2,7 @@ import { createContext, useState, useEffect } from 'react'
 import {
   createUserDocumentFromAuth,
   onAuthStateChangedListner,
-} from '../firebase.config'
+} from '../utils/firebase/firebase.utils'
 
 // as the actual value you want to access
 const UserContext = createContext({
