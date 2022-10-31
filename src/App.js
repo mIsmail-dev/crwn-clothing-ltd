@@ -5,13 +5,13 @@ import Authentication from './pages/Authentication/Authentication'
 import Shop from './pages/shop/Shop'
 import CheckOut from './pages/CheckOut/CheckOut'
 import { UserProvider } from './contexts/UserContext'
-import { ProductProvider } from './contexts/ProductContext'
+import { CategoriesProvider } from './contexts/CategoriesContext'
 import { CartProvider } from './contexts/CartContext'
 
 const App = () => {
   return (
     <UserProvider>
-      <ProductProvider>
+      <CategoriesProvider>
         <CartProvider>
           <Router>
             <Navbar />
@@ -23,7 +23,7 @@ const App = () => {
             </Routes>
           </Router>
         </CartProvider>
-      </ProductProvider>
+      </CategoriesProvider>
     </UserProvider>
   )
 }
