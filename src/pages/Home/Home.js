@@ -1,4 +1,4 @@
-import CategoryListing from '../../components/directory/Directory'
+import Directory from '../../components/directory/Directory'
 
 const Home = () => {
   const categories = [
@@ -28,9 +28,10 @@ const Home = () => {
       imageUrl: 'https://i.ibb.co/R70vBrQ/men.png',
     },
   ]
+
   return (
-    <div className='categories-container'>
-      <CategoryListing categories={categories} />
+    <div>
+      <Directory categories={categories} />
     </div>
   )
 }
