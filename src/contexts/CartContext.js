@@ -81,6 +81,13 @@ export const CartProvider = ({ children }) => {
   const [state, dispatch] = useReducer(cartReducer, INITIAL_STATE)
   const { isCartOpen, cartItems, cartCount, cartTotal } = state
 
+  const setIsCartOpen = (bool) => {
+    dispatch({
+      type: CART_ACTIONS_TYPES.SET_IS_CART_OPEN,
+      payload: bool,
+    })
+  }
+
   const updateCartItemsReducer = (newCartItems) => {
     const newCartCount = newCartItems.reduce((acc, cartItem) => {
       return acc + cartItem.quantity
@@ -114,13 +121,6 @@ export const CartProvider = ({ children }) => {
   const clearItemFromCart = (cartItemToClear) => {
     const newCartItems = clearCartItem(cartItems, cartItemToClear)
     updateCartItemsReducer(newCartItems)
-  }
-
-  const setIsCartOpen = (bool) => {
-    dispatch({
-      type: CART_ACTIONS_TYPES.SET_IS_CART_OPEN,
-      payload: bool,
-    })
   }
 
   return (
