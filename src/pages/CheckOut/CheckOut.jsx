@@ -1,4 +1,5 @@
 import { useContext } from 'react'
+import { Helmet } from 'react-helmet'
 import CheckoutItem from '../../components/checkout-item/CheckoutItem'
 import CartContext from '../../contexts/CartContext'
 import {
@@ -12,6 +13,13 @@ const Checkout = () => {
   const { cartItems, cartTotal } = useContext(CartContext)
   return (
     <CheckOutContainer>
+      <Helmet>
+        <title>Checkout page</title>
+        <meta
+          name='description'
+          content='Checkout page for all the cart Items.'
+        />
+      </Helmet>
       <CheckOutHeader>
         <HeaderBlock>
           <span>Product</span>
