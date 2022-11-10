@@ -1,9 +1,10 @@
 import { useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
+import { selectCategoriesMap } from '../../store/categories/categorySelector'
 import CategoryPreview from '../../components/category-preview/CategoryPreview'
 
 const CategoriesPreview = () => {
-  const { categoriesMap } = useSelector((state) => state.categories)
+  const categoriesMap = useSelector(selectCategoriesMap)
 
   return (
     <>
