@@ -1,10 +1,10 @@
-import { useContext } from 'react'
+import { useSelector } from 'react-redux'
 import { Helmet } from 'react-helmet'
 import CategoryPreview from '../../components/category-preview/CategoryPreview'
-import CategoriesContext from '../../contexts/CategoriesContext'
 
 const CategoriesPreview = () => {
-  const { categoriesMap } = useContext(CategoriesContext)
+  const { categoriesMap } = useSelector((state) => state.categories)
+
   return (
     <>
       <Helmet>

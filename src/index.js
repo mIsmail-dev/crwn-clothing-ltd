@@ -8,11 +8,11 @@ import { store } from './store/store'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <App />
-    </Provider>
-  </React.StrictMode>
+  // <React.StrictMode> // The error solved: Link: https://github.com/nfl/react-helmet/issues/548 bcz of react-helmet
+  <Provider store={store}>
+    <App />
+  </Provider>
+  // </React.StrictMode>
 )
 
 // If you want to start measuring performance in your app, pass a function
