@@ -6,7 +6,6 @@ import Home from './pages/Home/Home'
 import Authentication from './pages/Authentication/Authentication'
 import Shop from './pages/shop/Shop'
 import CheckOut from './pages/CheckOut/CheckOut'
-import { CartProvider } from './contexts/CartContext'
 import { setCurrentUser } from './store/user/userActions'
 import {
   createUserDocumentFromAuth,
@@ -29,7 +28,6 @@ const App = () => {
   }, [dispatch])
 
   return (
-    <CartProvider>
       <Router>
         <Navbar />
         <Routes>
@@ -39,7 +37,6 @@ const App = () => {
           <Route path='/checkout' element={<CheckOut />} />
         </Routes>
       </Router>
-    </CartProvider>
   )
 }
 
